@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -41,6 +42,8 @@ public class InputUtil {
             // create the http client and send request
             HttpClient client = HttpClientBuilder.create().build();
             HttpGet httpGet = new HttpGet(url);
+            String headerValue = "https://github.com/camwick/AdventOfCode by cwickers@pnw.edu";
+            httpGet.setHeader(HttpHeaders.USER_AGENT, headerValue);
             HttpResponse response = client.execute(httpGet, localContext);
 
             // Create file with input
