@@ -37,7 +37,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        solutionManager.runSolutionForDay("1");
+        solutionManager.runSolutionForDay(day);
 
         sc.close();
     }
