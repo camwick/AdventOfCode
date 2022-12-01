@@ -5,7 +5,6 @@ import java.util.List;
 
 public abstract class SolutionManager {
     private String year;
-    private boolean test;
     protected List<ProblemSolution> solutions;
 
     public SolutionManager(String year) {
@@ -17,5 +16,12 @@ public abstract class SolutionManager {
         return this.year;
     }
 
-    public abstract void runSolutionForDay(String day);
+    public void runSolutionForDay(String day){
+        for (ProblemSolution solution : this.solutions){
+            if (solution.getDay().equals(day)){
+                solution.solve();
+                System.out.println("\n");
+            }
+        }
+    }
 }

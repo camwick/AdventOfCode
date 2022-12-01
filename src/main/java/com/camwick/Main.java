@@ -17,9 +17,6 @@ public class Main {
         System.out.print("Day: ");
         String day = sc.nextLine().trim();
 
-        System.out.print("Part: ");
-        String part = sc.nextLine().trim();
-
         System.out.print("\nUse example tests? [Y/N] (Default yes): ");
         String testInput = sc.nextLine().toUpperCase();
 

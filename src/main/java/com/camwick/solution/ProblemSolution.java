@@ -18,19 +18,18 @@ public abstract class ProblemSolution {
         this.year = year;
         this.day = day;
         this.part = part;
-
-        InputUtil input = new InputUtil();
         
-
         if (test){
             this.sc = new Scanner(
                 new File(String.format("./src/main/resources/exampleInput/y%s/day%s/%s", this.year, this.day, fileName)));
         }
         else {
+            InputUtil input = new InputUtil();
             input.sendGet(this.year, this.day);
             this.sc = new Scanner(
                 new File(String.format("./src/main/resources/input/y%s/day%s/input.txt", this.year, this.day)));
         }
+
         this.timer = new TimerUtil();
     }
 

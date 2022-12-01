@@ -89,19 +89,6 @@ public class Day1Part2 extends ProblemSolution{
         System.out.println("Solution took " + this.timer.getElapsedTime() + "ms");
     }
 
-    private static void replaceWithGreater(int x, int[] arr){
-        int smallIndex = 0;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; ++i){
-            if (arr[i] < min){
-                min = arr[i];
-                smallIndex = i;
-            }
-        }
-
-        arr[smallIndex] = x;
-    }
-
     private static int totalMax(int[] arr){
         int total = 0;
 
