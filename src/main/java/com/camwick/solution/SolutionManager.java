@@ -8,9 +8,8 @@ public abstract class SolutionManager {
     private boolean test;
     protected List<ProblemSolution> solutions;
 
-    public SolutionManager(String year, boolean test) {
+    public SolutionManager(String year) {
         this.year = year;
-        this.test = test;
         this.solutions = new ArrayList<>();
     }
 

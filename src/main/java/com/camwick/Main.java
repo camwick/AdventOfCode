@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.camwick.solution.SolutionManager;
 import com.camwick.solution.y2016.SolutionManager2016;
+import com.camwick.solution.y2022.SolutionManager2022;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +17,9 @@ public class Main {
         System.out.print("Day: ");
         String day = sc.nextLine().trim();
 
+        System.out.print("Part: ");
+        String part = sc.nextLine().trim();
+
         System.out.print("\nUse example tests? [Y/N] (Default yes): ");
         String testInput = sc.nextLine().toUpperCase();
 
@@ -23,11 +27,20 @@ public class Main {
         if (testInput.equals("N"))
             test = false;
 
+        String fileName = "";
+        if (test){
+            System.out.print("Name of example input file: ");
+            fileName = sc.nextLine();
+        }
+        System.out.println(fileName);
         SolutionManager solutionManager = null;
         try {
             switch (year) {
                 case "2016":
-                    solutionManager = new SolutionManager2016(test);
+                    solutionManager = new SolutionManager2016(test, fileName);
+                    break;
+                case "2022":
+                    solutionManager = new SolutionManager2022(test, fileName);
                     break;
                 default:
                     System.out.println(String.format("Solutions for %s do not exist yet", year));

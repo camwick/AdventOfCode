@@ -14,7 +14,7 @@ public abstract class ProblemSolution {
     protected Scanner sc;
     protected TimerUtil timer;
 
-    public ProblemSolution(String year, String day, String part, boolean test) throws ClientProtocolException, IOException {
+    public ProblemSolution(String year, String day, String part, boolean test, String fileName) throws ClientProtocolException, IOException {
         this.year = year;
         this.day = day;
         this.part = part;
@@ -23,11 +23,6 @@ public abstract class ProblemSolution {
         
 
         if (test){
-            Scanner exampleInput = new Scanner(System.in);
-            System.out.print("Name of example input file: ");
-            String fileName = exampleInput.nextLine();
-            exampleInput.close();
-
             this.sc = new Scanner(
                 new File(String.format("./src/main/resources/exampleInput/y%s/day%s/%s", this.year, this.day, fileName)));
         }

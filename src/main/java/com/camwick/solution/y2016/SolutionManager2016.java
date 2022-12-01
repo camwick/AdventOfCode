@@ -9,10 +9,10 @@ import com.camwick.solution.SolutionManager;
 import com.camwick.solution.y2016.day1.Day1Part1;
 
 public class SolutionManager2016 extends SolutionManager {
-    public SolutionManager2016(boolean test) throws ClientProtocolException, IOException {
-        super("2016", test);
+    public SolutionManager2016(boolean test, String fileName) throws ClientProtocolException, IOException {
+        super("2016");
 
-        this.solutions.add(new Day1Part1(test));
+        this.solutions.add(new Day1Part1(test, fileName));
     }
 
     @Override
