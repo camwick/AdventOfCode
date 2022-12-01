@@ -85,9 +85,6 @@ public class Day1Part2 extends ProblemSolution{
         int maxInt = totalMax(max);
         this.timer.endTimer();
 
-        for (int x : max)
-            System.out.println(x);
-
         System.out.println("Calories: " + maxInt);
         System.out.println("Solution took " + this.timer.getElapsedTime() + "ms");
     }
