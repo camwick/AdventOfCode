@@ -9,8 +9,8 @@ import org.apache.http.client.ClientProtocolException;
 import com.camwick.solution.ProblemSolution;
 
 public class Day1Part1 extends ProblemSolution {
-    public Day1Part1() throws ClientProtocolException, IOException {
-        super("2016", "1", "1");
+    public Day1Part1(boolean test) throws ClientProtocolException, IOException {
+        super("2016", "1", "1", test);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Day1Part1 extends ProblemSolution {
             // get next sequence command
             String command = sequence.get(i);
             char turn = command.charAt(0);
-            int pace = Character.getNumericValue(turn);
+            int pace = Character.getNumericValue(command.charAt(1));
 
             switch (facing) {
                 case 'N':

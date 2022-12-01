@@ -13,7 +13,7 @@ public class Main {
         System.out.print("Year: ");
         String year = sc.nextLine().trim();
 
-        System.out.print("\nDay: ");
+        System.out.print("Day: ");
         String day = sc.nextLine().trim();
 
         System.out.print("\nUse example tests? [Y/N] (Default yes): ");

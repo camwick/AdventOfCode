@@ -14,17 +14,28 @@ public abstract class ProblemSolution {
     protected Scanner sc;
     protected TimerUtil timer;
 
-    public ProblemSolution(String year, String day, String part) throws ClientProtocolException, IOException {
+    public ProblemSolution(String year, String day, String part, boolean test) throws ClientProtocolException, IOException {
         this.year = year;
         this.day = day;
         this.part = part;
 
         InputUtil input = new InputUtil();
-        input.sendGet(this.year, this.day);
+        
 
-        this.sc = new Scanner(
-            new File(String.format("./src/main/resources/input/y%s/day%s/input.txt", this.year, this.day)));
+        if (test){
+            Scanner exampleInput = new Scanner(System.in);
+            System.out.print("Name of example input file: ");
+            String fileName = exampleInput.nextLine();
+            exampleInput.close();
 
+            this.sc = new Scanner(
+                new File(String.format("./src/main/resources/exampleInput/y%s/day%s/%s", this.year, this.day, fileName)));
+        }
+        else {
+            input.sendGet(this.year, this.day);
+            this.sc = new Scanner(
+                new File(String.format("./src/main/resources/input/y%s/day%s/input.txt", this.year, this.day)));
+        }
         this.timer = new TimerUtil();
     }
 

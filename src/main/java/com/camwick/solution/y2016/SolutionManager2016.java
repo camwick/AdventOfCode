@@ -12,7 +12,7 @@ public class SolutionManager2016 extends SolutionManager {
     public SolutionManager2016(boolean test) throws ClientProtocolException, IOException {
         super("2016", test);
 
-        this.solutions.add(new Day1Part1());
+        this.solutions.add(new Day1Part1(test));
     }
 
     @Override
