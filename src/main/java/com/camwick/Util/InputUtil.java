@@ -40,13 +40,14 @@ public class InputUtil {
             HttpContext localContext = new BasicHttpContext();
             localContext.setAttribute(HttpClientContext.COOKIE_STORE, cookieStore);
 
-            // create the http client and send request
+            // create the http client with appropriate headers
             HttpClient client = HttpClientBuilder.create().build();
             HttpGet httpGet = new HttpGet(url);
             httpGet.setHeader(HttpHeaders.USER_AGENT, headerValue);
+
             HttpResponse response = client.execute(httpGet, localContext);
 
-            // Create file with input
+            // Create file from response
             Scanner sc = new Scanner(response.getEntity().getContent());
 
             if (file.getParentFile() != null)
