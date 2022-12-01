@@ -24,6 +24,7 @@ public class InputUtil {
     public void sendGet(String year, String day) throws ClientProtocolException, IOException {
         String url = String.format("%s%s/day/%s/input", this.baseURL, year, day);
         String fileURL = String.format("./src/main/resources/input/y%s/day%s/input.txt", year, day);
+        String headerValue = "https://github.com/camwick/AdventOfCode by cwickers@pnw.edu";
 
         // check if file exists
         File file = new File(fileURL);
@@ -42,7 +43,6 @@ public class InputUtil {
             // create the http client and send request
             HttpClient client = HttpClientBuilder.create().build();
             HttpGet httpGet = new HttpGet(url);
-            String headerValue = "https://github.com/camwick/AdventOfCode by cwickers@pnw.edu";
             httpGet.setHeader(HttpHeaders.USER_AGENT, headerValue);
             HttpResponse response = client.execute(httpGet, localContext);
 
@@ -54,8 +54,8 @@ public class InputUtil {
             file.createNewFile();
 
             FileWriter writer = new FileWriter(file);
-            while (sc.hasNext()) {
-                writer.write(sc.nextLine());
+            while (sc.hasNextLine()) {
+                writer.write(sc.nextLine() + "\n");
             }
 
             writer.close();
