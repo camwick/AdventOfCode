@@ -11,7 +11,7 @@ import com.camwick.Util.TimerUtil;
 
 public abstract class ProblemSolution {
     private final String year, day, part;
-    protected Scanner testScanner;
+    protected Scanner sc;
     protected TimerUtil timer;
 
     public ProblemSolution(String year, String day, String part) throws ClientProtocolException, IOException {
@@ -21,8 +21,9 @@ public abstract class ProblemSolution {
 
         InputUtil input = new InputUtil();
         input.sendGet(this.year, this.day);
-        this.testScanner = new Scanner(
-                new File(String.format("./src/main/resources/input/y%s/day%s/input.txt", this.year, this.day)));
+
+        this.sc = new Scanner(
+            new File(String.format("./src/main/resources/input/y%s/day%s/input.txt", this.year, this.day)));
 
         this.timer = new TimerUtil();
     }
@@ -39,5 +40,5 @@ public abstract class ProblemSolution {
         return this.part;
     }
 
-    public abstract void solve(Scanner sc);
+    public abstract void solve();
 }

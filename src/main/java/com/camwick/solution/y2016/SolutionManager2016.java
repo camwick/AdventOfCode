@@ -1,7 +1,6 @@
 package com.camwick.solution.y2016;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
 
@@ -10,17 +9,17 @@ import com.camwick.solution.SolutionManager;
 import com.camwick.solution.y2016.day1.Day1Part1;
 
 public class SolutionManager2016 extends SolutionManager {
-    private List<ProblemSolution> solutions;
-
     public SolutionManager2016(boolean test) throws ClientProtocolException, IOException {
-        super("2016");
+        super("2016", test);
 
-        if (test) {
-            // run with example tests
-        } else {
-            // run with regular input
+        this.solutions.add(new Day1Part1());
+    }
+
+    @Override
+    public void runSolutionForDay(String day){
+        for (ProblemSolution solution : this.solutions){
+            if (solution.getDay().equals(day))
+                solution.solve();
         }
-
-        solutions.add(new Day1Part1());
     }
 }

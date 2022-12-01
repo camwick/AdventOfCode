@@ -3,7 +3,6 @@ package com.camwick.solution.y2016.day1;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 import org.apache.http.client.ClientProtocolException;
 
@@ -15,9 +14,9 @@ public class Day1Part1 extends ProblemSolution {
     }
 
     @Override
-    public void solve(Scanner sc) {
+    public void solve() {
         // parsing data
-        String line = sc.nextLine().trim();
+        String line = this.sc.nextLine().trim();
         List<String> sequence = Arrays.asList(line.split(" "));
 
         this.timer.startTimer();
@@ -68,7 +67,7 @@ public class Day1Part1 extends ProblemSolution {
 
         this.timer.endTimer();
 
-        System.out.println("Blocks away: " + distance);
+        System.out.println("\nBlocks away: " + distance);
         System.out.println("Solution took " + this.timer.getElapsedTime() + "ms");
     }
 

@@ -18,11 +18,11 @@ import org.apache.http.protocol.HttpContext;
 
 public class InputUtil {
     private String baseURL = "https://adventofcode.com/";
-    private String cookie = "53616c7465645f5f97e5e2ed292b2838b5ed78196227c6a0ae8d7da04d34d85b98ea484b5da9cf8fd14bafe85e19476d2120b223ca066d6677d7ecc2ec8e9815";
+    private String cookie = "53616c7465645f5f57566f1e545b1db73add00fb291bdd01f8ea473e4bbd41bcf14b527b08fc9aeb605a063981c2ad31f08ea8e42e6fcfd4d2cb13f89b144c29";
 
     public void sendGet(String year, String day) throws ClientProtocolException, IOException {
         String url = String.format("%s%s/day/%s/input", this.baseURL, year, day);
-        String fileURL = String.format("./src/main/resources/inputs/y%s/day%s/input.txt", year, day);
+        String fileURL = String.format("./src/main/resources/input/y%s/day%s/input.txt", year, day);
 
         // check if file exists
         File file = new File(fileURL);
