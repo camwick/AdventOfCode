@@ -1,7 +1,6 @@
 package com.camwick.solution.y2022.day2;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import org.apache.http.client.ClientProtocolException;
 
