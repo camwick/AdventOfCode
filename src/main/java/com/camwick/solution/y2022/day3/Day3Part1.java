@@ -37,7 +37,7 @@ public class Day3Part1 extends ProblemSolution{
 
         this.timer.endTimer();
 
-        System.out.println("Sum of prioritiens: " + sum);
+        System.out.println("Sum of priorities: " + sum);
         System.out.println("Solution took " + this.timer.getElapsedTime() + "ms");
     }
    
