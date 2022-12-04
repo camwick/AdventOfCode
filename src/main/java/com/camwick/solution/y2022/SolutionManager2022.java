@@ -11,6 +11,7 @@ import com.camwick.solution.y2022.day2.Day2Part1;
 import com.camwick.solution.y2022.day2.Day2Part2;
 import com.camwick.solution.y2022.day3.Day3Part1;
 import com.camwick.solution.y2022.day3.Day3Part2;
+import com.camwick.solution.y2022.day4.Day4Part1;
 
 public class SolutionManager2022 extends SolutionManager{
     public SolutionManager2022(boolean test, String fileName) throws ClientProtocolException, IOException{
@@ -23,5 +24,6 @@ public class SolutionManager2022 extends SolutionManager{
         this.solutions.add(new Day2Part2(test, fileName));
         this.solutions.add(new Day3Part1(test, fileName));
         this.solutions.add(new Day3Part2(test, fileName));
+        this.solutions.add(new Day4Part1(test, fileName));
     }
 }
