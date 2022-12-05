@@ -19,4 +19,8 @@ public class TimerUtil {
 
         return Duration.ofNanos(elapsed).toMillis();
     }
+
+    public void printElapsedTime(){
+        System.out.println("Solution took " + this.getElapsedTime() + "ms");
+    }
 }
