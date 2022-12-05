@@ -56,7 +56,6 @@ public class Day5Part1 extends ProblemSolution{
         // start solution finally...
         this.timer.startTimer();
 
-        // printStacks(stacks);
         for(int i = 0; i < commands.size(); i+=3){
             int quantity = commands.get(i);
             int fromIndex = commands.get(i+1)-1;
@@ -77,13 +76,5 @@ public class Day5Part1 extends ProblemSolution{
 
         System.out.println("Top Crates: " + ans);
         this.timer.printElapsedTime();
-    }
-
-    private void printStacks(List<Stack<Character>> stacks){
-        for (Stack<Character> stack : stacks) {
-            while(!stack.empty())
-                System.out.print(stack.pop() + " ");
-            System.out.println("");
-        }
     }
 }
