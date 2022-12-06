@@ -29,7 +29,7 @@ public class Main {
             System.out.print("Name of example input file: ");
             fileName = sc.nextLine();
         }
-        System.out.println(fileName);
+
         SolutionManager solutionManager = null;
         try {
             switch (year) {
