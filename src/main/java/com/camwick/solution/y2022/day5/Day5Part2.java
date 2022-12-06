@@ -9,11 +9,11 @@ import org.apache.http.client.ClientProtocolException;
 
 import com.camwick.solution.ProblemSolution;
 
-public class Day5Part2 extends ProblemSolution{
+public class Day5Part2 extends ProblemSolution {
 
-    public Day5Part2(boolean test, String fileName)
+    public Day5Part2(boolean test, String fileName, String currentDay)
             throws ClientProtocolException, IOException {
-        super("2022", "5", "2", test, fileName);
+        super("2022", "5", "2", test, fileName, currentDay);
     }
 
     @Override
@@ -21,16 +21,15 @@ public class Day5Part2 extends ProblemSolution{
         // parse input
         List<String> stackStuff = new ArrayList<>();
         List<Integer> commands = new ArrayList<>();
-        while(this.sc.hasNextLine()){
+        while (this.sc.hasNextLine()) {
             String line = this.sc.nextLine();
 
-            if(line.equals(""))
+            if (line.equals(""))
                 continue;
 
-            if(line.charAt(0) != 'm'){
+            if (line.charAt(0) != 'm') {
                 stackStuff.add(line);
-            }
-            else{
+            } else {
                 String[] commandParts = line.split(" ");
                 commands.add(Integer.parseInt(commandParts[1]));
                 commands.add(Integer.parseInt(commandParts[3]));
@@ -40,15 +39,16 @@ public class Day5Part2 extends ProblemSolution{
 
         // put crates in proper stacks
         List<Stack<Character>> stacks = new ArrayList<>();
-        for(int i = 0; i < Character.getNumericValue(stackStuff.get(stackStuff.size()-1).charAt(stackStuff.get(stackStuff.size()-1).length()-2)); i++)
+        for (int i = 0; i < Character.getNumericValue(
+                stackStuff.get(stackStuff.size() - 1).charAt(stackStuff.get(stackStuff.size() - 1).length() - 2)); i++)
             stacks.add(new Stack<Character>());
 
-        for(int i = stackStuff.size() - 2; i >= 0; i--){
-            for(int j = 0; j < stackStuff.get(i).length(); j+=4){
-                if(stackStuff.get(i).charAt(j) == '['){
+        for (int i = stackStuff.size() - 2; i >= 0; i--) {
+            for (int j = 0; j < stackStuff.get(i).length(); j += 4) {
+                if (stackStuff.get(i).charAt(j) == '[') {
                     // calculate the crate position using char index
                     int index = stackStuff.get(i).indexOf('[', j) / 4;
-                    stacks.get(index).add(stackStuff.get(i).charAt(j+1));
+                    stacks.get(index).add(stackStuff.get(i).charAt(j + 1));
                 }
             }
         }
@@ -56,22 +56,22 @@ public class Day5Part2 extends ProblemSolution{
         // start solution finally...
         this.timer.startTimer();
 
-        for(int i = 0; i < commands.size(); i+=3){
+        for (int i = 0; i < commands.size(); i += 3) {
             int quantity = commands.get(i);
-            int fromIndex = commands.get(i+1)-1;
-            int toIndex = commands.get(i+2)-1;
-            
+            int fromIndex = commands.get(i + 1) - 1;
+            int toIndex = commands.get(i + 2) - 1;
+
             StringBuilder crates = new StringBuilder();
-            for(int j = 0; j < quantity; ++j)
+            for (int j = 0; j < quantity; ++j)
                 crates.append(stacks.get(fromIndex).pop());
-            for(int j = crates.length()-1; j >= 0; j--)
+            for (int j = crates.length() - 1; j >= 0; j--)
                 stacks.get(toIndex).add(crates.charAt(j));
         }
-        
+
         // get answer from tops of each stack
         StringBuilder ans = new StringBuilder();
         for (Stack<Character> stack : stacks) {
-            if(!stack.empty())
+            if (!stack.empty())
                 ans.append(stack.pop());
         }
 

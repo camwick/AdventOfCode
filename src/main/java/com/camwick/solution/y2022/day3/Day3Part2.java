@@ -8,18 +8,18 @@ import org.apache.http.client.ClientProtocolException;
 
 import com.camwick.solution.ProblemSolution;
 
-public class Day3Part2 extends ProblemSolution{
+public class Day3Part2 extends ProblemSolution {
 
-    public Day3Part2(boolean test, String fileName)
+    public Day3Part2(boolean test, String fileName, String currentDay)
             throws ClientProtocolException, IOException {
-        super("2022", "3", "2", test, fileName);
+        super("2022", "3", "2", test, fileName, currentDay);
     }
 
     @Override
     public void solve() {
         // parse input
         List<String> rucksacks = new ArrayList<>();
-        while(this.sc.hasNextLine()){
+        while (this.sc.hasNextLine()) {
             rucksacks.add(this.sc.nextLine());
         }
 
@@ -27,8 +27,8 @@ public class Day3Part2 extends ProblemSolution{
 
         // find common items
         List<Character> commonItems = new ArrayList<>();
-        for(int i = 0; i <= rucksacks.size() - 3; i+=3) {
-            commonItems.add(findCommonChar(rucksacks.get(i), rucksacks.get(i+1), rucksacks.get(i+2)));
+        for (int i = 0; i <= rucksacks.size() - 3; i += 3) {
+            commonItems.add(findCommonChar(rucksacks.get(i), rucksacks.get(i + 1), rucksacks.get(i + 2)));
         }
 
         // compute sum of priority
@@ -39,20 +39,20 @@ public class Day3Part2 extends ProblemSolution{
         System.out.println("Sum of priorities: " + sum);
         System.out.println("Solution took " + this.timer.getElapsedTime() + "ms");
     }
-   
-    private char findCommonChar(String x, String y, String z){
+
+    private char findCommonChar(String x, String y, String z) {
         char ans = 'a';
 
         List<Character> common = new ArrayList<>();
-        for(int i = 0; i < x.length(); ++i){
-            for(int j = 0; j < y.length(); ++j){
+        for (int i = 0; i < x.length(); ++i) {
+            for (int j = 0; j < y.length(); ++j) {
                 if (x.charAt(i) == y.charAt(j))
                     common.add(x.charAt(i));
             }
         }
 
-        for(int i = 0; i < common.size(); ++i){
-            for(int j = 0; j < z.length(); ++j){
+        for (int i = 0; i < common.size(); ++i) {
+            for (int j = 0; j < z.length(); ++j) {
                 if (common.get(i) == z.charAt(j))
                     return common.get(i);
             }
@@ -61,14 +61,13 @@ public class Day3Part2 extends ProblemSolution{
         return ans;
     }
 
-    private int sumOfPriority(List<Character> x){
+    private int sumOfPriority(List<Character> x) {
         int sum = 0;
 
-        for(char item : x){
-            if(Character.isUpperCase(item)){
+        for (char item : x) {
+            if (Character.isUpperCase(item)) {
                 sum += (item - 65 + 27);
-            }
-            else {
+            } else {
                 sum += (item - 97 + 1);
             }
         }

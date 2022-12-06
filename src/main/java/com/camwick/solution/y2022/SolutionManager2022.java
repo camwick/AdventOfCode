@@ -15,21 +15,24 @@ import com.camwick.solution.y2022.day4.Day4Part1;
 import com.camwick.solution.y2022.day4.Day4Part2;
 import com.camwick.solution.y2022.day5.Day5Part1;
 import com.camwick.solution.y2022.day5.Day5Part2;
+import com.camwick.solution.y2022.day6.Day6Part1;
 
-public class SolutionManager2022 extends SolutionManager{
-    public SolutionManager2022(boolean test, String fileName) throws ClientProtocolException, IOException{
+public class SolutionManager2022 extends SolutionManager {
+    public SolutionManager2022(boolean test, String fileName, String currentDay)
+            throws ClientProtocolException, IOException {
         super("2022");
 
         // add solutions to manager here...
-        this.solutions.add(new Day1Part1(test, fileName));
-        this.solutions.add(new Day1Part2(test, fileName));
-        this.solutions.add(new Day2Part1(test, fileName));
-        this.solutions.add(new Day2Part2(test, fileName));
-        this.solutions.add(new Day3Part1(test, fileName));
-        this.solutions.add(new Day3Part2(test, fileName));
-        this.solutions.add(new Day4Part1(test, fileName));
-        this.solutions.add(new Day4Part2(test, fileName));
-        this.solutions.add(new Day5Part1(test, fileName));
-        this.solutions.add(new Day5Part2(test, fileName));
+        this.solutions.add(new Day1Part1(test, fileName, currentDay));
+        this.solutions.add(new Day1Part2(test, fileName, currentDay));
+        this.solutions.add(new Day2Part1(test, fileName, currentDay));
+        this.solutions.add(new Day2Part2(test, fileName, currentDay));
+        this.solutions.add(new Day3Part1(test, fileName, currentDay));
+        this.solutions.add(new Day3Part2(test, fileName, currentDay));
+        this.solutions.add(new Day4Part1(test, fileName, currentDay));
+        this.solutions.add(new Day4Part2(test, fileName, currentDay));
+        this.solutions.add(new Day5Part1(test, fileName, currentDay));
+        this.solutions.add(new Day5Part2(test, fileName, currentDay));
+        this.solutions.add(new Day6Part1(test, fileName, currentDay));
     }
 }

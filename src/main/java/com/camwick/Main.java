@@ -25,7 +25,7 @@ public class Main {
             test = false;
 
         String fileName = "";
-        if (test){
+        if (test) {
             System.out.print("Name of example input file: ");
             fileName = sc.nextLine();
         }
@@ -34,10 +34,10 @@ public class Main {
         try {
             switch (year) {
                 case "2016":
-                    solutionManager = new SolutionManager2016(test, fileName);
+                    solutionManager = new SolutionManager2016(test, fileName, day);
                     break;
                 case "2022":
-                    solutionManager = new SolutionManager2022(test, fileName);
+                    solutionManager = new SolutionManager2022(test, fileName, day);
                     break;
                 default:
                     System.out.println(String.format("Solutions for %s do not exist yet", year));

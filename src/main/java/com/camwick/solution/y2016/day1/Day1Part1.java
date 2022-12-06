@@ -9,8 +9,8 @@ import org.apache.http.client.ClientProtocolException;
 import com.camwick.solution.ProblemSolution;
 
 public class Day1Part1 extends ProblemSolution {
-    public Day1Part1(boolean test, String fileName) throws ClientProtocolException, IOException {
-        super("2016", "1", "1", test, fileName);
+    public Day1Part1(boolean test, String fileName, String currentDay) throws ClientProtocolException, IOException {
+        super("2016", "1", "1", test, fileName, currentDay);
     }
 
     @Override
