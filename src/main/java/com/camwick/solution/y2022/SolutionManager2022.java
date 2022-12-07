@@ -18,6 +18,7 @@ import com.camwick.solution.y2022.day5.Day5Part2;
 import com.camwick.solution.y2022.day6.Day6Part1;
 import com.camwick.solution.y2022.day6.Day6Part2;
 import com.camwick.solution.y2022.day7.Day7Part1;
+import com.camwick.solution.y2022.day7.Day7Part2;
 
 public class SolutionManager2022 extends SolutionManager {
     public SolutionManager2022(boolean test, String fileName, String currentDay)
@@ -38,5 +39,6 @@ public class SolutionManager2022 extends SolutionManager {
         this.solutions.add(new Day6Part1(test, fileName, currentDay));
         this.solutions.add(new Day6Part2(test, fileName, currentDay));
         this.solutions.add(new Day7Part1(test, fileName, currentDay));
+        this.solutions.add(new Day7Part2(test, fileName, currentDay));
     }
 }
