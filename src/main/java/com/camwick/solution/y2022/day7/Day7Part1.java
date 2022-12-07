@@ -17,6 +17,8 @@ public class Day7Part1 extends ProblemSolution{
 
     @Override
     public void solve() {
+        this.timer.startTimer();
+
         List<Folder> directories = new ArrayList<>();
 
         Folder homeDir = new Folder("/");
@@ -66,17 +68,14 @@ public class Day7Part1 extends ProblemSolution{
 
             individualSum += folder.sumAllSubFolders();
 
-            System.out.println("Folder " + folder.getName() + "has size " + individualSum);
-
             if(individualSum <= 100000)
                 sum += individualSum;
         }
 
-        System.out.println(sum);
-    }
+        this.timer.endTimer();
 
-    public void printDir(Folder folder){
-        
+        System.out.println("Sum greater than 100000: " + sum);
+        this.timer.printElapsedTime();
     }
 
     public class Folder{
@@ -136,7 +135,7 @@ public class Day7Part1 extends ProblemSolution{
             sum += this.sumFileSizes();
 
             for(Folder subFolder : subFolders)
-                subFolder.sumAllSubFolders();
+                sum += subFolder.sumAllSubFolders();
 
             return sum;
         }
