@@ -128,14 +128,6 @@ public class Day7Part2 extends ProblemSolution{
             return folder;
         }
 
-        public List<Folder> getSubFolders(){
-            return this.subFolders;
-        }
-
-        public List<File> getFiles(){
-            return this.files;
-        }
-
         public int sumAllSubFolders(){
             int sum = 0;
 
@@ -154,44 +146,17 @@ public class Day7Part2 extends ProblemSolution{
             }
             return sum;
         }
-
-        public String getName(){
-            return this.name;
-        }
-
-        @Override
-        public String toString(){
-            StringBuilder structure = new StringBuilder();
-
-            structure.append("Files in " + this.name + " (dir)\n");
-            for(File file : this.files)
-                structure.append("\t" + file + "(in " + this.name + ")\n");
-            for(Folder folder : this.subFolders)
-                structure.append("\t(parent=" + this.name + ")" + folder + "\n");
-            return structure.toString();
-        }
     }
 
     public class File{
-        private final String name;
         private final int size;
 
         public File(String name, int size){
-            this.name = name;
             this.size = size;
-        }
-
-        public String getName(){
-            return this.name;
         }
 
         public int getSize(){
             return this.size;
-        }
-
-        @Override
-        public String toString(){
-            return this.name + " (file, size=" + this.size + ")"; 
         }
     } 
 }
