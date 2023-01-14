@@ -7,6 +7,7 @@ import org.apache.http.client.ClientProtocolException;
 import com.camwick.solution.SolutionManager;
 import com.camwick.solution.y2022.day1.Day1Part1;
 import com.camwick.solution.y2022.day1.Day1Part2;
+import com.camwick.solution.y2022.day10.Day10Part1;
 import com.camwick.solution.y2022.day2.Day2Part1;
 import com.camwick.solution.y2022.day2.Day2Part2;
 import com.camwick.solution.y2022.day3.Day3Part1;
@@ -44,5 +45,6 @@ public class SolutionManager2022 extends SolutionManager {
         this.solutions.add(new Day7Part2(test, fileName, currentDay));
         this.solutions.add(new Day8Part1(test, fileName, currentDay));
         this.solutions.add(new Day8Part2(test, fileName, currentDay));
+        this.solutions.add(new Day10Part1(test, fileName, currentDay));
     }
 }
