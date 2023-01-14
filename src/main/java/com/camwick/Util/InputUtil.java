@@ -19,7 +19,7 @@ import org.apache.http.protocol.HttpContext;
 
 public class InputUtil {
     private String baseURL = "https://adventofcode.com/";
-    private String cookie = "53616c7465645f5f57566f1e545b1db73add00fb291bdd01f8ea473e4bbd41bcf14b527b08fc9aeb605a063981c2ad31f08ea8e42e6fcfd4d2cb13f89b144c29";
+    private String cookie = "53616c7465645f5fcdded75727586380fffa09f82b47253b818b8dc376f9573b581ff54c3665a8b2a5b596ac6059cd4583308a570b3cff52c09faf8fb9e8d6e8";
 
     public void sendGet(String year, String day) throws ClientProtocolException, IOException {
         String url = String.format("%s%s/day/%s/input", this.baseURL, year, day);
